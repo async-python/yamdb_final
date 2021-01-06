@@ -1,4 +1,4 @@
-![yamdb_workflow](https://github.com/vardeath/yamdb_final/workflows/Flask-app%20workflow/badge.svg)
+![yamdb_workflow](https://github.com/vardeath/yamdb_final/workflows/yamdb_workflow/badge.svg)
 # Yamdb API
 ## Provides an API for the YaMDb service, a database of reviews of movies, books, and music.
 
