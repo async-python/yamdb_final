@@ -23,13 +23,7 @@ jobs:
 
     - name: Test with pytest
       env:
-        SECRET_KEY: ${{ secrets.PROD_ENV_FILE.SECRET_KEY }}
-        DB_ENGINE: ${{ secrets.PROD_ENV_FILE.DB_ENGINE }}
-        DB_HOST: ${{ secrets.PROD_ENV_FILE.DB_HOST }}
-        DB_NAME: ${{ secrets.PROD_ENV_FILE.DB_NAME }}
-        DB_PORT: ${{ secrets.PROD_ENV_FILE.DB_PORT }}
-        POSTGRES_USER: ${{ secrets.PROD_ENV_FILE.POSTGRES_USER }}
-        POSTGRES_PASSWORD: ${{ secrets.PROD_ENV_FILE.POSTGRES_PASSWORD }}
+        PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
       run: pytest ./tests/
 
   build_and_push_to_docker_hub:
