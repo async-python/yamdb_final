@@ -64,8 +64,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          source: "docker-compose.yaml,/nginx/default.conf"
-          target: "home/varg/app"
+          source: "docker-compose.yaml, nginx/default.conf"
+          target: "/home/varg/app/"
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         env:
@@ -76,7 +76,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            cd home/varg/app
+            cd /home/varg/app/
             echo $PROD_ENV_FILE | base64 --decode > .env
             sudo docker-compose up
 
