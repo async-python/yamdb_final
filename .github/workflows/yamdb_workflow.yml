@@ -57,15 +57,16 @@ jobs:
 #    needs: build_and_push_to_docker_hub
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
       - name: copy file via ssh password
-        uses: appleboy/scp-action@v0.0.10
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          fingerprint: ${{ secrets.FINGERPRINT }}
           source: "docker-compose.yaml"
           target: "~/app/"
 #      - name: executing remote ssh commands to deploy
