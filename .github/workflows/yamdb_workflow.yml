@@ -66,6 +66,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           source: "docker-compose.yaml"
           target: "/home/varg/app/"
+          strip_components: 1
 #      - name: executing remote ssh commands to deploy
 #        uses: appleboy/ssh-action@master
 #        env:
