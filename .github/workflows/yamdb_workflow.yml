@@ -58,8 +58,6 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
-      - name: Pack files
-        run: tar -cf deploy.tar ./docker-compose.yaml ./nginx/default.conf
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
