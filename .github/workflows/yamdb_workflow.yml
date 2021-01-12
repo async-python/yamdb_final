@@ -56,19 +56,15 @@ jobs:
     runs-on: ubuntu-latest
 #    needs: build_and_push_to_docker_hub
     steps:
-      - name: checkout
-        uses: actions/checkout@master
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-#          password: ${{ secrets.PASSWORD }}
+          username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-#          fingerprint: ${{ secrets.FINGERPRINT }}
           source: "docker-compose.yaml"
-          target: "~/app/"
+          target: "home/varg/app/"
 #      - name: executing remote ssh commands to deploy
 #        uses: appleboy/ssh-action@master
 #        env:
