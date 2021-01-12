@@ -3,4 +3,5 @@ WORKDIR /code
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+RUN python manage.py collectstatic --no-input
+CMD python manage.py migrate && gunicorn api_yamdb.wsgi -b 0.0.0.0:8000
