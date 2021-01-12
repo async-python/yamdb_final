@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: vardeath/yambd-api:v1.0
+          tags: vardeath/yambd-api:v1.1
 
   deploy:
     runs-on: ubuntu-latest
