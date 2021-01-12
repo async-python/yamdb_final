@@ -23,10 +23,10 @@ Available at the address: <your_server_address>/redoc/ when the app is running.
   persistently stored in volumes.
 - We use the [Postgres] database. Data is permanently stored in volumes.
 
-##Requirements
+## Requirements
 You need to install [Docker] and [Docker-Compose].
 
-##Start an application
+## Start an application
 The application is automatically deployed on your server using Github Actions and sends a notification via Telegram about the successful launch.
 In Github Secrets, you need to define the following variables:
  - SECRET_KEY, secret django app key.
@@ -45,7 +45,7 @@ In Github Secrets, you need to define the following variables:
  - TELEGRAM_TO, your telegram id.
  - TELEGRAM_TOKEN, telegram bot token.
 
-##Base commands
+## Base commands
 - Migrate databases: `docker-compose run --rm web python manage.py migrate`
 - Collect static files: `docker-compose run --rm web python manage.py collectstatic --no-input`
 - Run: `docker-compose up`
