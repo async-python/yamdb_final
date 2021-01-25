@@ -14,8 +14,7 @@ services:
     env_file:
       - ./.env
     restart: always
-    networks:
-      - db_network
+
   web:
     image: vardeath/yambd-api:v1.2
     container_name: web
@@ -29,9 +28,7 @@ services:
       - db
     env_file:
       - ./.env
-    networks:
-      - nginx_network
-      - db_network
+
   nginx:
     image: nginx:1.19.5-alpine
     container_name: nginx
@@ -45,11 +42,3 @@ services:
       - ./.env
     depends_on:
       - web
-    networks:
-      - nginx_network
-
-networks:
-  db_network:
-    driver: bridge
-  nginx_network:
-    driver: bridge
